@@ -13,7 +13,7 @@ export function rect(context, attributes) {
   } = attributes;
   const x1 = width > 0 ? x : x + width;
   const y1 = height > 0 ? y : y + height;
-  return shape(context, 'rectangle', x1, y1, width, height, options);
+  return shape(context, 'rectangle', x1, y1, Math.abs(width), Math.abs(height), options);
 }
 
 export function path(context, attributes) {

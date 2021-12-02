@@ -97,6 +97,28 @@ describe('plot', () => {
     mount(createDiv(), chart);
   });
 
+  test('bar chart', () => {
+    const data = [
+      { name: 'questions', value: 17 },
+      { name: 'schools', value: 25 },
+      { name: 'philosophers', value: 35 },
+    ];
+
+    const chart = sp
+      .interval()
+      .data(data)
+      .renderer(createRenderer)
+      .coordinate(sp.transpose())
+      .encode(
+        sp.x().field('name'),
+        sp.y().field('value'),
+        sp.fill().field('name'),
+      )
+      .plot();
+
+    mount(createDiv(), chart);
+  });
+
   test('pie', () => {
     const data = [
       { name: 'questions', value: 17 },

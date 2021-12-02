@@ -1,6 +1,6 @@
 {
   "name": "@sparrow-vis/rough-renderer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "lib/sparrow.js",
   "module": "esm/sparrow.js",
