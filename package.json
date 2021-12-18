@@ -14,6 +14,7 @@
   "scripts": {
     "lint": "eslint --fix",
     "test": "jest --coverage",
+    "test-live": "cross-env DEBUG_MODE=1 jest --coverage",
     "build": "rimraf -rf ./dist ./lib ./esm && rollup --config",
     "ci": "run-s lint test build",
     "prepare": "husky install",
@@ -32,6 +33,7 @@
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@sparrow-vis/sparrow": "^0.0.2",
+    "cross-env": "^7.0.3",
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",

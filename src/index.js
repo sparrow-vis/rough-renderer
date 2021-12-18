@@ -1,1 +1,1 @@
-export { createRenderer } from './renderer';
+export { createPlugin } from './renderer';

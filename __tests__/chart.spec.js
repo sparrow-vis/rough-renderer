@@ -1,5 +1,5 @@
 import * as sp from '@sparrow-vis/sparrow';
-import { createRenderer } from '../src';
+import { createPlugin } from '../src';
 import { createDiv, mount } from './utils';
 
 describe('plot', () => {
@@ -13,7 +13,7 @@ describe('plot', () => {
     ];
 
     const chart = sp.plot({
-      renderer: createRenderer,
+      renderer: createPlugin(),
       data,
       element: 'interval',
       encode: [
@@ -42,7 +42,7 @@ describe('plot', () => {
         sp.y().field('value'),
         sp.fill().field('name'),
       )
-      .renderer(createRenderer)
+      .renderer(createPlugin())
       .plot();
 
     mount(createDiv(), chart);
@@ -59,7 +59,7 @@ describe('plot', () => {
 
     const chart = sp
       .interval()
-      .renderer(createRenderer)
+      .renderer(createPlugin())
       .data(data)
       .coordinate(sp.transpose(), sp.polar())
       .encode(sp.x().field('genre'), sp.y().field('sold'), sp.fill().field('genre'))
@@ -79,7 +79,7 @@ describe('plot', () => {
       .interval()
       .data(data)
       .statistic(sp.stack())
-      .renderer(createRenderer)
+      .renderer(createPlugin())
       .coordinate(
         sp.polar(),
       )
@@ -107,7 +107,7 @@ describe('plot', () => {
     const chart = sp
       .interval()
       .data(data)
-      .renderer(createRenderer)
+      .renderer(createPlugin())
       .coordinate(sp.transpose())
       .encode(
         sp.x().field('name'),
@@ -130,7 +130,7 @@ describe('plot', () => {
       .interval()
       .data(data)
       .statistic(sp.stack())
-      .renderer(createRenderer)
+      .renderer(createPlugin())
       .coordinate(
         sp.transpose(),
         sp.polar(),
