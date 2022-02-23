@@ -6,8 +6,7 @@ import { mount, createDiv, createContext } from './utils';
 
 describe('shapes', () => {
   test('line', () => {
-    const context = createContext(600, 400);
-    intensifyContext(context);
+    const context = intensifyContext(createContext(600, 400));
 
     const { node } = context;
     const shape = line(context, {
@@ -21,8 +20,7 @@ describe('shapes', () => {
   });
 
   test('circle', () => {
-    const context = createContext(600, 400);
-    intensifyContext(context);
+    const context = intensifyContext(createContext(600, 400));
 
     const { node } = context;
     const shape = circle(context, {
@@ -36,8 +34,7 @@ describe('shapes', () => {
   });
 
   test('transparent circle', () => {
-    const context = createContext(600, 400);
-    intensifyContext(context);
+    const context = intensifyContext(createContext(600, 400));
 
     const { node } = context;
     const shape = circle(context, {
@@ -51,8 +48,7 @@ describe('shapes', () => {
   });
 
   test('rect', () => {
-    const context = createContext(600, 400);
-    intensifyContext(context);
+    const context = intensifyContext(createContext(600, 400));
 
     const { node } = context;
     const shape = rect(context, {
@@ -67,7 +63,7 @@ describe('shapes', () => {
   });
 
   test('path', () => {
-    const context = createContext(600, 400);
+    const context = intensifyContext(createContext(600, 400));
     intensifyContext(context);
 
     const { node } = context;
