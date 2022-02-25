@@ -18,7 +18,8 @@ export function rect(context, attributes) {
 
 export function path(context, attributes) {
   const { d, ...options } = attributes;
-  return shape(context, 'path', d.flat().join(' '), options);
+  const path = Array.isArray(d) ? d.flat().join(' ') : d;
+  return shape(context, 'path', path, options);
 }
 
 export function circle(context, attributes) {
